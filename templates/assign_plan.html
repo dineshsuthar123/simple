@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Assign Plan{% endblock %}
+{% block content %}
+<div class="card">
+  <h2>Assign Plan to Member</h2>
+  <form method="POST" class="form">
+    <label>Member</label>
+    <select name="member_id" required>
+      {% for m in members %}
+      <option value="{{ m.member_id }}">#{{ m.member_id }} - {{ m.name }}</option>
+      {% endfor %}
+    </select>
+
+    <label>Plan</label>
+    <select name="plan_id" required>
+      {% for p in plans %}
+      <option value="{{ p.plan_id }}">{{ p.plan_name }} ({{ p.duration_months }} mo)</option>
+      {% endfor %}
+    </select>
+
+    <label>Start Date</label>
+    <input type="date" name="start_date" required />
+
+    <label>End Date (optional, auto if blank)</label>
+    <input type="date" name="end_date" />
+
+    <button type="submit" class="btn primary">Assign Plan</button>
+  </form>
+</div>
+{% endblock %}

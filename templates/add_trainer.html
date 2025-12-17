@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Add Trainer{% endblock %}
+{% block content %}
+<div class="card">
+  <h2>Add Trainer</h2>
+  <form method="POST" class="form">
+    <label>Name</label>
+    <input name="name" required placeholder="Trainer name" />
+
+    <label>Specialization</label>
+    <input name="specialization" required placeholder="e.g., Strength, Yoga" />
+
+    <label>Contact</label>
+    <input name="contact" placeholder="Phone" />
+
+    <button type="submit" class="btn primary">Save Trainer</button>
+  </form>
+</div>
+{% endblock %}

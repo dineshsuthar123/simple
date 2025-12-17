@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Add Schedule{% endblock %}
+{% block content %}
+<div class="card">
+  <h2>Add Workout Schedule</h2>
+  <form method="POST" class="form">
+    <label>Trainer</label>
+    <select name="trainer_id" required>
+      {% for t in trainers %}
+      <option value="{{ t.trainer_id }}">#{{ t.trainer_id }} - {{ t.name }}</option>
+      {% endfor %}
+    </select>
+
+    <label>Schedule Name</label>
+    <input name="schedule_name" required placeholder="Morning Strength" />
+
+    <label>Time Slot</label>
+    <input name="time_slot" required placeholder="7 AM - 9 AM" />
+
+    <button type="submit" class="btn primary">Save Schedule</button>
+  </form>
+</div>
+{% endblock %}

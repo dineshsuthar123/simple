@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Gym System{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">PulseFit Gym</div>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/view_members">Members</a>
+      <a href="/view_trainers">Trainers</a>
+      <a href="/view_plans">Plans</a>
+      <a href="/view_schedules">Schedules</a>
+      <a href="/view_payments">Payments</a>
+      <a href="/view_attendance">Attendance</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-group">
+          {% for category, msg in messages %}
+            <div class="flash {{ category }}">{{ msg }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

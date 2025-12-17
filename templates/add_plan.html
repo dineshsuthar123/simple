@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Add Plan{% endblock %}
+{% block content %}
+<div class="card">
+  <h2>Create Membership Plan</h2>
+  <form method="POST" class="form">
+    <label>Plan Name</label>
+    <input name="plan_name" required placeholder="Gold, Premium" />
+
+    <label>Duration (months)</label>
+    <input type="number" name="duration" min="1" required />
+
+    <label>Fee</label>
+    <input type="number" name="fee" min="0" step="0.01" required />
+
+    <button type="submit" class="btn primary">Save Plan</button>
+  </form>
+</div>
+{% endblock %}

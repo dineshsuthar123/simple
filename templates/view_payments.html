@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Payments{% endblock %}
+{% block content %}
+<div class="card">
+  <div class="card-head">
+    <h2>Payments</h2>
+    <a class="btn primary" href="/add_payment">Add Payment</a>
+  </div>
+  <table class="data">
+    <thead>
+      <tr><th>ID</th><th>Member</th><th>Schedule</th><th>Amount</th><th>Date</th><th>Mode</th></tr>
+    </thead>
+    <tbody>
+      {% for p in payments %}
+      <tr>
+        <td>{{ p.payment_id }}</td>
+        <td>{{ p.member }}</td>
+        <td>{{ p.schedule }}</td>
+        <td>₹{{ '%.2f'|format(p.amount) }}</td>
+        <td>{{ p.paid_on }}</td>
+        <td>{{ p.mode_of_payment }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

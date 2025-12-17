@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Attendance{% endblock %}
+{% block content %}
+<div class="card">
+  <div class="card-head">
+    <h2>Attendance</h2>
+    <a class="btn primary" href="/mark_attendance">Mark Attendance</a>
+  </div>
+  <table class="data">
+    <thead>
+      <tr><th>ID</th><th>Member</th><th>Schedule</th><th>Date</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      {% for a in attendance %}
+      <tr>
+        <td>{{ a.attendance_id }}</td>
+        <td>{{ a.member }}</td>
+        <td>{{ a.schedule }}</td>
+        <td>{{ a.attended_on }}</td>
+        <td>{{ a.status }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

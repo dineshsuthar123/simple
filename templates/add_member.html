@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Add Member{% endblock %}
+{% block content %}
+<div class="card">
+  <h2>Add Member</h2>
+  <form method="POST" class="form">
+    <label>Name</label>
+    <input name="name" required placeholder="Member name" />
+
+    <label>Gender</label>
+    <select name="gender" required>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label>Phone</label>
+    <input name="phone" placeholder="Phone" />
+
+    <label>Email</label>
+    <input type="email" name="email" placeholder="Email" />
+
+    <button type="submit" class="btn primary">Save Member</button>
+  </form>
+</div>
+{% endblock %}

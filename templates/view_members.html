@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Members{% endblock %}
+{% block content %}
+<div class="card">
+  <div class="card-head">
+    <h2>Members</h2>
+    <a class="btn primary" href="/add_member">Add Member</a>
+  </div>
+  <table class="data">
+    <thead>
+      <tr>
+        <th>ID</th><th>Name</th><th>Gender</th><th>Phone</th><th>Email</th><th>Joined</th><th>Plans</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for m in members %}
+      <tr>
+        <td>{{ m.member_id }}</td>
+        <td>{{ m.name }}</td>
+        <td>{{ m.gender }}</td>
+        <td>{{ m.phone }}</td>
+        <td>{{ m.email }}</td>
+        <td>{{ m.joined }}</td>
+        <td>{{ m.plans }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

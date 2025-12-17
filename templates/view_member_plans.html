@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Member Plans{% endblock %}
+{% block content %}
+<div class="card">
+  <div class="card-head">
+    <h2>Member Plans</h2>
+    <a class="btn primary" href="/assign_plan">Assign Plan</a>
+  </div>
+  <table class="data">
+    <thead>
+      <tr><th>Member</th><th>Plan</th><th>Start</th><th>End</th><th>Duration</th><th>Fee</th></tr>
+    </thead>
+    <tbody>
+      {% for a in assignments %}
+      <tr>
+        <td>#{{ a.member_id }} {{ a.name }}</td>
+        <td>{{ a.plan_name }}</td>
+        <td>{{ a.start_date }}</td>
+        <td>{{ a.end_date }}</td>
+        <td>{{ a.duration_months }} mo</td>
+        <td>₹{{ '%.2f'|format(a.fee) }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard | Gym System{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">DBMS Project</p>
+    <h1>Gym Management System</h1>
+    <p class="sub">Manage members, plans, schedules, payments, and attendance from one clean dashboard.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="/add_member">Add Member</a>
+      <a class="btn ghost" href="/view_members">View Members</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-card">
+      <div class="stat-num">{{ stats.members }}</div>
+      <div class="stat-label">Members</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">{{ stats.trainers }}</div>
+      <div class="stat-label">Trainers</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">{{ stats.plans }}</div>
+      <div class="stat-label">Plans</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">{{ stats.schedules }}</div>
+      <div class="stat-label">Schedules</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">{{ stats.payments }}</div>
+      <div class="stat-label">Payments</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">{{ stats.attendance }}</div>
+      <div class="stat-label">Attendance</div>
+    </div>
+  </div>
+</section>
+
+<section class="grid-actions">
+  <a class="tile" href="/add_member">
+    <div class="tile-title">Add Member</div>
+    <div class="tile-sub">Capture details and join date</div>
+  </a>
+  <a class="tile" href="/add_trainer">
+    <div class="tile-title">Add Trainer</div>
+    <div class="tile-sub">Store expertise and contacts</div>
+  </a>
+  <a class="tile" href="/add_plan">
+    <div class="tile-title">Create Plan</div>
+    <div class="tile-sub">Duration and pricing</div>
+  </a>
+  <a class="tile" href="/assign_plan">
+    <div class="tile-title">Assign Plan</div>
+    <div class="tile-sub">Member-plan linkage</div>
+  </a>
+  <a class="tile" href="/add_schedule">
+    <div class="tile-title">Add Schedule</div>
+    <div class="tile-sub">Trainer and slot</div>
+  </a>
+  <a class="tile" href="/add_payment">
+    <div class="tile-title">Record Payment</div>
+    <div class="tile-sub">Amount and mode</div>
+  </a>
+  <a class="tile" href="/mark_attendance">
+    <div class="tile-title">Mark Attendance</div>
+    <div class="tile-sub">Daily presence</div>
+  </a>
+</section>
+{% endblock %}

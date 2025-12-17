@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Schedules{% endblock %}
+{% block content %}
+<div class="card">
+  <div class="card-head">
+    <h2>Workout Schedules</h2>
+    <a class="btn primary" href="/add_schedule">Add Schedule</a>
+  </div>
+  <table class="data">
+    <thead>
+      <tr><th>ID</th><th>Name</th><th>Time Slot</th><th>Trainer</th></tr>
+    </thead>
+    <tbody>
+      {% for s in schedules %}
+      <tr>
+        <td>{{ s.schedule_id }}</td>
+        <td>{{ s.schedule_name }}</td>
+        <td>{{ s.time_slot }}</td>
+        <td>{{ s.trainer }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

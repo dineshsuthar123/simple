@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Trainers{% endblock %}
+{% block content %}
+<div class="card">
+  <div class="card-head">
+    <h2>Trainers</h2>
+    <a class="btn primary" href="/add_trainer">Add Trainer</a>
+  </div>
+  <table class="data">
+    <thead>
+      <tr><th>ID</th><th>Name</th><th>Specialization</th><th>Contact</th></tr>
+    </thead>
+    <tbody>
+      {% for t in trainers %}
+      <tr>
+        <td>{{ t.trainer_id }}</td>
+        <td>{{ t.name }}</td>
+        <td>{{ t.specialization }}</td>
+        <td>{{ t.contact_no }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
